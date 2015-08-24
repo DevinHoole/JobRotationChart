@@ -1,0 +1,138 @@
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  min-width: 1000px;
+  background:#67806d;
+}
+#content{
+  height: 500px;
+  width: 1000px;
+  background: #e0e4cc;
+  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  margin: 150px auto;
+}
+
+.panel
+{
+  padding: 3.5px 2.5px 3.5px 2.5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  position: relative;
+  /*margin: 100px auto;*/
+}
+
+#Buttons{
+  position: relative;
+  margin: auto 450px;
+}
+ /*Use the following CSS code if you want to use data attributes for inserting your icons*/
+/*[data-icon]:before {
+	font-family: 'linecons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}*/
+ /*Use the following CSS code if you want to have a class per icon */
+[class^="li_calendar"]:before, [class*="li_calendar"]:before {
+	font-family: 'linecons';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+
+}
+[class^="li_key"]:before, [class*="li_key"]:before {
+	font-family: 'linecons';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+
+}[class^="li_calendar"]:before, [class*="li_calendar"]:before {
+	font-family: 'linecons';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+
+}
+.li_key:before {
+	content: "\e008";
+}
+.li_news:before {
+	content: "\e018";
+}
+.li_data:before {
+	content: "\e021";
+}
+.li_calendar:before {
+	content: "\e02b";
+}
+/*Navigation buttons Start*/
+nav ul {
+	list-style: none; overflow: none; position: relative;
+}
+	nav ul li {
+		float: left; margin: 0 20px 0 0;
+	}
+		nav ul li a {
+			display: block; width: 100px; height: 100px;
+			 background-repeat: no-repeat;
+		}
+			nav ul li:nth-child(1) a {
+        background-image: url(shop.png);
+				background-color: #5bb2fc;
+				background-position: 22px 22px;
+        background-size: 55px 55px;
+			}
+			nav ul li:nth-child(2) a {
+        background-image: url(key.png);
+				background-color: #58ebd3;
+				background-position: 22px 22px;
+        background-size: 55px 55px;
+			}
+			nav ul li:nth-child(3) a {
+        background-image: url(note.png);
+				background-color: #ffa659;
+				background-position: 22px 22px;
+        background-size: 55px 55px;
+			}
+			nav ul li:nth-child(4) a {
+        background-image: url(calendar.png);
+				background-color: #ff7a85;
+				background-position: 22px 22px;
+        background-size: 55px 55px;
+			}
+
+				nav ul li a span {
+					font: 25px "Dosis", sans-serif; text-transform: uppercase;
+					position: absolute; left: 525px; top: 15px;
+					display: none;
+				}
+					nav ul li a:hover span {
+						display: block;
+					}
+
+				nav ul li:nth-child(1) a span {
+					color: #5bb2fc;
+				}
+				nav ul li:nth-child(2) a span {
+					color: #58ebd3;
+				}
+				nav ul li:nth-child(3) a span {
+					color: #ffa659;
+				}
+				nav ul li:nth-child(4) a span {
+					color: #ff7a85;
+				}
+/*End of nav buttons			*/
