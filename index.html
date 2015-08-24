@@ -29,10 +29,9 @@
     			</li>
     			<li>
     				<a href="#">
-    					<span>Job Calander</span>
+    					<span>Job Assignments</span>
     				</a>
     			</li>
-
     		</ul>
     	</nav>
     </div>
@@ -47,7 +46,18 @@
     </form>
 
     <button ng-click="randomizer(names, jobs)">Assign Jobs</button>
-</div>    
+
+    <div id="jlist">
+    <ul><h2><u>Jobs</u></h2>
+      <li ng-repeat="chore in jobs">{{chore.jobs}}</li>
+    </ul>
+  </div>
+      <div id="nlist">
+      <ul><h2><u>Names</u></h2>
+        <li ng-repeat="people in names">{{people.name}}</li>
+      </ul>
+    </div>
+</div>
 
 
 

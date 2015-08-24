@@ -30,6 +30,15 @@ html, body {
   position: relative;
   margin: auto 450px;
 }
+
+#jlist{
+  float: right;
+  margin-right: 45px;
+}
+#nlist{
+  float: right;
+  margin-right: 45px;
+}
  /*Use the following CSS code if you want to use data attributes for inserting your icons*/
 /*[data-icon]:before {
 	font-family: 'linecons';
