@@ -8,7 +8,6 @@
   <body ng-controller="mainCtrl">
 
 
-
     <div id="Buttons">
     	<nav>
     		<ul>
@@ -38,29 +37,40 @@
 
 <div id="content">
     <form ng-submit="addName(name)">
-      <input ng-model="name">
+      <input ng-model="name" placeholder="Names" required>
     </form>
     {{names}}
     <form ng-submit="addJob(job)">
-      <input ng-model="job">
+      <input ng-model="job" placeholder="Jobs" required>
     </form>
 
     <button ng-click="randomizer(names, jobs)">Assign Jobs</button>
 
     <div id="jlist">
-    <ul><h2><u>Jobs</u></h2>
-      <li ng-repeat="chore in jobs">{{chore.jobs}}</li>
-    </ul>
-  </div>
-      <div id="nlist">
+      <ul ng-hide="randomize"><h2><u>Jobs</u></h2>
+        <li ng-repeat="job in jobs">{{job}}</li>
+      </ul>
+      <ul ng-show="randomize"><h2><u>Jobs</u></h2>
+        <li ng-repeat="job in oldJobs">{{job}}</li>
+      </ul>
+    </div>
+    <div id="nlist">
       <ul><h2><u>Names</u></h2>
         <li ng-repeat="people in names">{{people.name}}</li>
       </ul>
     </div>
-</div>
 
+    <ul ng-show="randomize">
+      <li ng-repeat="info in names">{{info.name}}
+        <ul>
+          <li ng-repeat="job in info.jobs">{{job}}</li>
+        </ul>
+      </li>
+    </ul>
 
+  </div> <!-- End content -->
 
+{{jobs}}
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>

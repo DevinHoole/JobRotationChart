@@ -99,25 +99,25 @@ nav ul {
 			 background-repeat: no-repeat;
 		}
 			nav ul li:nth-child(1) a {
-        background-image: url(shop.png);
+        background-image: url(Images/shop.png);
 				background-color: #5bb2fc;
 				background-position: 22px 22px;
         background-size: 55px 55px;
 			}
 			nav ul li:nth-child(2) a {
-        background-image: url(key.png);
+        background-image: url(Images/key.png);
 				background-color: #58ebd3;
 				background-position: 22px 22px;
         background-size: 55px 55px;
 			}
 			nav ul li:nth-child(3) a {
-        background-image: url(note.png);
+        background-image: url(Images/note.png);
 				background-color: #ffa659;
 				background-position: 22px 22px;
         background-size: 55px 55px;
 			}
 			nav ul li:nth-child(4) a {
-        background-image: url(calendar.png);
+        background-image: url(Images/calendar.png);
 				background-color: #ff7a85;
 				background-position: 22px 22px;
         background-size: 55px 55px;
