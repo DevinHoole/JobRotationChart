@@ -12,7 +12,7 @@
     	<nav>
     		<ul>
     			<li>
-    				<a herf="#home">
+    				<a href="#home">
     					<span>Home</span>
     				</a>
     			</li>
@@ -27,7 +27,7 @@
     				</a>
     			</li>
     			<li>
-    				<a href="#jobAssingment">
+    				<a href="#jobAssignment">
     					<span>Job Assignment</span>
     				</a>
     			</li>
@@ -36,37 +36,6 @@
     </div>
 
 <div id="content">
-    <form ng-submit="addName(name)">
-      <input ng-model="name" placeholder="Names" required>
-    </form>
-    <!-- {{names}} -->
-    <form ng-submit="addJob(job)">
-      <input ng-model="job" placeholder="Jobs" required>
-    </form>
-
-    <button ng-click="randomizer(names, jobs)">Assign Jobs</button>
-
-    <div id="jlist">
-      <ul ng-hide="randomize"><h2><u>Jobs</u></h2>
-        <li ng-repeat="job in jobs">{{job}}</li>
-      </ul>
-      <ul ng-show="randomize"><h2><u>Jobs</u></h2>
-        <li ng-repeat="job in oldJobs">{{job}}</li>
-      </ul>
-    </div>
-    <div id="nlist">
-      <ul><h2><u>Names</u></h2>
-        <li ng-repeat="people in names">{{people.name}}</li>
-      </ul>
-    </div>
-
-    <ul ng-show="randomize">
-      <li ng-repeat="info in names">{{info.name}}
-        <ul>
-          <li ng-repeat="job in info.jobs">{{job}}</li>
-        </ul>
-      </li>
-    </ul>
 
         <!-- routing -->
       <ng-view></ng-view>
