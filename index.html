@@ -7,7 +7,7 @@
   </head>
   <body ng-controller="mainCtrl">
 
-
+<!-- start of Navigation buttons -->
     <div id="Buttons">
     	<nav>
     		<ul>
@@ -34,8 +34,8 @@
     		</ul>
     	</nav>
     </div>
-
-<div id="content">
+<!-- end of Navigation buttons -->
+  <div id="content">
 
         <!-- routing -->
       <ng-view></ng-view>
@@ -52,6 +52,11 @@
     <script src="js/Controllers/jobDetailsCtrl.js"></script>
                     <!-- Services -->
     <script src="js/Services/mainService.js"></script>
+    <script src="js/Services/authService.js"></script>
+    <script src="js/Services/firebaseService.js"></script>
+                    <!-- Firebase -->
+    <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="//cdn.firebase.com/libs/angularfire/1.1.1/angularfire.js"></script>
     </script>
   </body>
 </html>

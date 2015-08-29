@@ -1,4 +1,4 @@
-var app = angular.module('jobRotation', ['ngRoute']);
+var app = angular.module('jobRotation', ['ngRoute', 'firebase']);
 
 app.config(function($routeProvider) {
 

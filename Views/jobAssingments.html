@@ -1,15 +1,34 @@
 <div id="content">
+    <div id="Calendar">
+    <ol class="calendar">
+        <li>
+        	<ol>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wensday</li>
+                <li>Thursay</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+                <li>Sunday</li>
 
+            </ol>
+        </li>
+    </ol>
+  </div>
+
+<!-- Input for names and jobs, must hit enter to sumbit -->
     <form ng-submit="addName(name)">
       <input ng-model="name" placeholder="Names" required>
-    </form>
+    </form> <br>
     <!-- {{names}} -->
     <form ng-submit="addJob(job)">
       <input ng-model="job" placeholder="Jobs" required>
-    </form>
+    </form> <br>
 
+<!-- This button randomly combines names with jobs -->
     <button ng-click="randomizer(names, jobs)">Assign Jobs</button>
 
+<!-- This display all of the info in bulleted lists -->
     <div id="jlist">
       <ul ng-hide="randomize"><h2><u>Jobs</u></h2>
         <li ng-repeat="job in jobs">{{job}}</li>
@@ -31,5 +50,6 @@
         </ul>
       </li>
     </ul>
+
 
   </div> <!-- End content -->

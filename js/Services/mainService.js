@@ -1,5 +1,6 @@
 var app = angular.module('jobRotation');
 
-app.service('randomService', function(){
+app.service('mainService', function(){
+
 
 });
