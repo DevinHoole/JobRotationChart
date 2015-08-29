@@ -102,25 +102,3 @@ nav ul {
 					color: #ff7a85;
 				}
 /*End of nav buttons			*/
-
-ol.calendar{
-    margin:0;
-    padding:0;
-    font:1em/1.4 Verdana, Arial, Helvetica, sans-serif;
-    text-align:center;padding:1px 1px 0;
-    display:block;
-    width:55px;
-    margin:0 auto;
-    display:block;
-    display:inline;
-}
-
-li li{
-  width:7em;
-  height:7em;
-  float:left;
-  margin:.1em;
-  border:1px solid #444;
-  padding:.2em;
-  overflow:auto;
-}

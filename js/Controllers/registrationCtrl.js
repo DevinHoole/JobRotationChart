@@ -1,6 +1,6 @@
 var app = angular.module('jobRotation');
 
-app.controller('registrationCtrl' function($scope, authService, $location userReference, thingsReference){
+app.controller('registrationCtrl', function($scope, authService, $location, userReference, thingsReference){
 
 
   //Step 2 of Registration
@@ -17,28 +17,28 @@ app.controller('registrationCtrl' function($scope, authService, $location userRe
     }
     $scope.reg = !$scope.reg;
   };
-})
 
-//Step 4 of Registration
-var loginCallback = function(user){
-  user.uid = user.uid.replace('simplelogin:', '');
-  $location.path('/dashboard/' + user.uid)
-};
 
-$scope.login = function () {
-  return authService.login($scope.details, loginCallback);
-};
+  //Step 4 of Registration
+  var loginCallback = function(user){
+    user.uid = user.uid.replace('simplelogin:', '');
+    $location.path('/dashboard/' + user.uid)
+  };
 
-$scope.profile = userReference;
-$scope.things = thingsReference;
-$scope.addThing = function(){
-  $scope.things.$add($scope.thing);
-}
-$scope.removeThing = function(thing){
-  $scope.things.$remove(thing);
-}
-$scope.update = function(){
-  $scope.profile.$save();
-};
-});
+  $scope.login = function () {
+    return authService.login($scope.details, loginCallback);
+  };
+
+  $scope.profile = userReference;
+  $scope.things = thingsReference;
+  $scope.addThing = function(){
+    $scope.things.$add($scope.thing);
+  }
+  $scope.removeThing = function(thing){
+    $scope.things.$remove(thing);
+  }
+  $scope.update = function(){
+    $scope.profile.$save();
+  };
+
 });
