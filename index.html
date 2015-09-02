@@ -22,12 +22,12 @@
     				</a>
     			</li>
     			<li>
-    				<a href="#jobDetails">
+    				<a href="#jobDetails" ng-show="authData">
     					<span>Job Details</span>
     				</a>
     			</li>
     			<li>
-    				<a href="#jobAssignment">
+    				<a href="#jobAssignment" ng-show="authData">
     					<span>Job Assignment</span>
     				</a>
     			</li>
@@ -36,7 +36,7 @@
     </div>
 <!-- end of Navigation buttons -->
   <div id="content">
-    
+
         <!-- routing -->
       <ng-view></ng-view>
 
@@ -45,18 +45,18 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.3/angular-route.js"></script>
     <script src="js/app.js"></script>
+                    <!-- Firebase -->
+    <script src="//cdn.firebase.com/libs/angularfire/1.1.1/angularfire.js"></script>
+    <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
                     <!-- Controllers -->
     <script src="js/Controllers/mainCtrl.js"></script>
     <script src="js/Controllers/registrationCtrl.js"></script>
     <script src="js/Controllers/randomizerCtrl.js"></script>
     <script src="js/Controllers/jobDetailsCtrl.js"></script>
+    <script src="js/Controllers/loginCtrl.js"></script>
                     <!-- Services -->
     <script src="js/Services/mainService.js"></script>
     <script src="js/Services/authService.js"></script>
     <script src="js/Services/firebaseService.js"></script>
-                    <!-- Firebase -->
-    <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-    <script src="//cdn.firebase.com/libs/angularfire/1.1.1/angularfire.js"></script>
-    </script>
   </body>
 </html>

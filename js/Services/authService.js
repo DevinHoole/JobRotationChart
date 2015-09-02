@@ -3,30 +3,9 @@ var app = angular.module('jobRotation');
 app.service('authService', function($firebaseAuth){
   //Just a reference to the firebase endpoint
   var firebaseUrl = 'https://drh-job-rotation.firebaseio.com/'
-
   //Creates an object using the Firebase Constructor with our endpoint passed in
   var fbRef = new Firebase(firebaseUrl);
   var authObj = $firebaseAuth(fbRef);
-
-  //login method to be called from our controller. The callback is then passed the authenticated user
-  this.login = function(user, cb){
-    authObj.$authWithPassword({
-      email : user.email,
-      password : user.password
-    }).then(function(authData){
-      // user authenticated with Firebase
-      console.log("Logged In! User ID: " + authData.uid);
-      cb(authData);
-    }).then(function(err){
-      switch (err.code) {
-        case "INVALID_EMAIL":
-          // handle an invalid email
-          case "INVALID_PASSWORD":
-          // handle an invalid password
-          default:
-      }
-    });
-  };
 
   //Step 3 of Registration
   this.register = function(user, cb){
@@ -61,4 +40,33 @@ app.service('authService', function($firebaseAuth){
         }
     });
   };
+
+  //login method to be called from our controller. The callback is then passed the authenticated user
+  this.login = function(user, cb){
+    authObj.$authWithPassword({
+      email : user.email,
+      password : user.password
+    }).then(function(authData){
+      // user authenticated with Firebase
+      console.log("Logged In! User ID: " + authData.uid);
+      cb(authData);
+    }).catch(function(err){
+      switch (err.code) {
+        case "INVALID_EMAIL":
+          // handle an invalid email
+          case "INVALID_PASSWORD":
+          // handle an invalid password
+          default:
+      }
+    });
+  };
+
+  this.getAuthData = function(){
+    return authObj;
+  }
+
+  this.logout = function(){
+    authObj.$unauth();
+  }
+
 });

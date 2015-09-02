@@ -1,7 +1,6 @@
 var app = angular.module('jobRotation');
 
-app.controller('registrationCtrl', function($scope, authService, $location, userReference, thingsReference){
-
+app.controller('registrationCtrl', function($scope, authService, $location){
 
   //Step 2 of Registration
   $scope.register = function () {
@@ -29,8 +28,8 @@ app.controller('registrationCtrl', function($scope, authService, $location, user
     return authService.login($scope.details, loginCallback);
   };
 
-  $scope.profile = userReference;
-  $scope.things = thingsReference;
+  // $scope.profile = userReference;
+  // $scope.things = thingsReference;
   $scope.addThing = function(){
     $scope.things.$add($scope.thing);
   }

@@ -31,12 +31,24 @@
 
 <!-- This shows the names and jobs combined at random -->
     <ul ng-show="randomize">
-      <li ng-repeat="info in names">{{info.name}}
+      <li ng-repeat="info in names" ng-click="current = info">
+        {{info.name}}
+        {{info.assignedDay}}
         <ul>
           <li ng-repeat="job in info.jobs">{{job.name}}</li>
         </ul>
       </li>
     </ul>
+
+
+
+<div class="boxed"></div>
+<div class="boxed"></div>
+<div class="boxed"></div>
+<div class="boxed"></div>
+<div class="boxed"></div>
+<div class="boxed"></div>
+
 
 
   </div> <!-- End content -->

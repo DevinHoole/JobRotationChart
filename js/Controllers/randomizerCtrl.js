@@ -4,6 +4,8 @@ var app = angular.module('jobRotation');
 app.controller('randomizerCtrl', function($scope, $firebaseArray){
   $scope.randomize = false;
 
+  $scope.week = [{name: "Sunday", assignments: []}, {name: "Monday", assignments: []}, {name: "Tuesday", assignments: []}, {name: "Wednesday", assignments: []}]
+
   var namesRef = new Firebase("https://drh-job-rotation.firebaseio.com/names");
   $scope.names = $firebaseArray(namesRef);
 
@@ -50,6 +52,10 @@ app.controller('randomizerCtrl', function($scope, $firebaseArray){
       // trackArr[num].jobs.push(arr2[i]);
       trackArr.splice(num, 1);
     }
+    arr2.forEach(function(job, index){
+      arr2.$remove(index);
+    })
+    arr2.$save();
 
     // for (var i = 0; i < $scope.jobs.length; i++) {
     //   $scope.oldJobs.push($scope.jobs[i]);

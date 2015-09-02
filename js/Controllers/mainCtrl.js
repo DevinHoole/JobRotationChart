@@ -1,7 +1,9 @@
 var app = angular.module('jobRotation');
 
-// functions used to generate lists then assing them together.
-app.controller('mainCtrl', function($scope){
-
-
+app.controller('mainCtrl', function($rootScope, authService){
+  var authData = authService.getAuthData();
+  authData.$onAuth(function(data){
+  $rootScope.authData = data;
+  console.log(data);
+  });
 });
