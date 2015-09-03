@@ -32,22 +32,24 @@
 <!-- This shows the names and jobs combined at random -->
     <ul ng-show="randomize">
       <li ng-repeat="info in names" ng-click="current = info">
-        {{info.name}}
-        {{info.assignedDay}}
+        <h3>{{info.name}}</h3>
         <ul>
-          <li ng-repeat="job in info.jobs">{{job.name}}</li>
+          <li ng-repeat="job in info.jobs" draggable="true">{{info.name}} - {{job.name}}</li>
         </ul>
       </li>
     </ul>
 
+
+
 <!-- This is the start of the row of box's -->
     <div class="row">
-       <div class="boxed">A</div><!--
-    --><div class="boxed">B</div><!--
-    --><div class="boxed">C</div><!--
-    --><div class="boxed">D</div><!--
-    --><div class="boxed">E</div><!--
-    --><div class="boxed">F</div>
+       <div class="boxed"><h4>Monday</h4></div><!--
+    --><div class="boxed"><h4>Tuesday</h4></div><!--
+    --><div class="boxed"><h4>Wensday</h4></div><!--
+    --><div class="boxed"><h4>Thursday</h4></div><!--
+    --><div class="boxed"><h4>Friday</h4></div><!--
+    --><div class="boxed"><h4>Saturday</h4></div><!--
+    --><div class="boxed"><h4>Sunday</h4></div>
     </div>
 
 

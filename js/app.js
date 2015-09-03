@@ -26,8 +26,8 @@ $routeProvider
         templateUrl: "View/jobInfoThreads.html",
         controller: "jobInfothreadsCtrl",
         resolve: {
-          threadsRef: function(threadsService){
-            return threadsService.getThreads();
+          threadsRef: function(jobInfoService){
+            return jobInfoService.getThreads();
           }
         }
      })

@@ -62,6 +62,13 @@ app.controller('randomizerCtrl', function($scope, $firebaseArray){
     // }
 
     // $scope.jobs = []; //allows you to contiune to add to the list of jobs
+    // $scope.jobNamePairs = []
+    // for(var i = 0; i < arr1.length; i++){
+    //   for(var key in arr1[i].jobs){
+    //     $scope.jobNamePairs.push({name: arr1[i].name, job: arr1[i].jobs[key].name})
+    //     console.log($scope.jobNamePairs);
+    //   }
+    // }
     $scope.randomize = true;
   }
 
