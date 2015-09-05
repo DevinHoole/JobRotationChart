@@ -1,4 +1,4 @@
-var app = angular.module('jobRotation', ['ngRoute', 'firebase']);
+var app = angular.module('jobRotation', ['ngRoute', 'firebase', 'ngDragDrop']);
 
 app.constant('fb' , {
   url: "https://drh-job-rotation.firebaseio.com/"});

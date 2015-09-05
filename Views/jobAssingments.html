@@ -29,27 +29,33 @@
       </ul>
     </div>
 
+
+
 <!-- This shows the names and jobs combined at random -->
     <ul ng-show="randomize">
       <li ng-repeat="info in names" ng-click="current = info">
         <h3>{{info.name}}</h3>
         <ul>
-          <li ng-repeat="job in info.jobs" draggable="true">{{info.name}} - {{job.name}}</li>
+          <li ng-repeat="job in info.jobs">
+
+            <div id="list" data-drag="true" jqyoui-draggable>
+            {{info.name}} - {{job.name}}
+            </div>
+
+        </li>
         </ul>
       </li>
     </ul>
 
-
-
 <!-- This is the start of the row of box's -->
-    <div class="row">
-       <div class="boxed"><h4>Monday</h4></div><!--
-    --><div class="boxed"><h4>Tuesday</h4></div><!--
-    --><div class="boxed"><h4>Wensday</h4></div><!--
-    --><div class="boxed"><h4>Thursday</h4></div><!--
-    --><div class="boxed"><h4>Friday</h4></div><!--
-    --><div class="boxed"><h4>Saturday</h4></div><!--
-    --><div class="boxed"><h4>Sunday</h4></div>
+    <div id="row" data-drag="true" jqyoui-droppable jqyoui-droppable="{multiple:true}" data-jqyoui-options="{revert: 'invalid'}">
+       <div id="boxed"><h4>Monday</h4></div><!--
+    --><div id="boxed"><h4>Tuesday</h4></div><!--
+    --><div id="boxed"><h4>Wensday</h4></div><!--
+    --><div id="boxed"><h4>Thursday</h4></div><!--
+    --><div id="boxed"><h4>Friday</h4></div><!--
+    --><div id="boxed"><h4>Saturday</h4></div><!--
+    --><div id="boxed"><h4>Sunday</h4></div>
     </div>
 
 

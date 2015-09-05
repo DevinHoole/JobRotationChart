@@ -1,0 +1,18 @@
+{
+  "name": "JobRotationChart",
+  "version": "0.0.1",
+  "homepage": "https://github.com/DevinHoole/JobRotationChart",
+  "authors": [
+    "Devin Hoole <devinhoole@outlook.com>"
+  ],
+  "description": "It takes any number of name and jobs and randomly assigns the jobs to the names",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+  	"angular": "#1",
+  	"angular-route": "#1",
+  	"angular-dragdrop": "#1",
+  	"firebase": "#2",
+  	"angularfire": "#1"
+  }
+}
