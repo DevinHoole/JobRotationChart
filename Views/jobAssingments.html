@@ -29,7 +29,11 @@
       </ul>
     </div>
 
-
+    <!-- <div>
+        <ul>
+          <li ng-repeat='item in list1' ng-show="item.title" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list1" jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep'}">{{item.title}}</li>
+        </ul>
+    </div> -->
 
 <!-- This shows the names and jobs combined at random -->
     <ul ng-show="randomize">
@@ -38,7 +42,8 @@
         <ul>
           <li ng-repeat="job in info.jobs">
 
-            <div id="list" data-drag="true" jqyoui-draggable>
+            <div id="list" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
+              jqyoui-draggable="{index: {{$index}}, animate: true, placeholder: 'keep', onStop: 'onDragStop(job, info.name)'}" ng-model="job">
             {{info.name}} - {{job.name}}
             </div>
 
@@ -48,15 +53,17 @@
     </ul>
 
 <!-- This is the start of the row of box's -->
-    <div id="row" data-drag="true" jqyoui-droppable jqyoui-droppable="{multiple:true}" data-jqyoui-options="{revert: 'invalid'}">
-       <div id="boxed"><h4>Monday</h4></div><!--
-    --><div id="boxed"><h4>Tuesday</h4></div><!--
-    --><div id="boxed"><h4>Wensday</h4></div><!--
-    --><div id="boxed"><h4>Thursday</h4></div><!--
-    --><div id="boxed"><h4>Friday</h4></div><!--
-    --><div id="boxed"><h4>Saturday</h4></div><!--
-    --><div id="boxed"><h4>Sunday</h4></div>
+  <div id="row">
+    <div id="boxed" ng-repeat="(day, jobs) in week"><h4>{{day}}</h4>
+      <ul data-drop="true" jqyoui-droppable="{multiple:true, onDrop: 'assignDay(day)'}">
+        <li style="list-style: none;" ng-repeat="job in jobs track by $index" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}"
+         jqyoui-draggable="{index: {{$index}},animate:true}">{{job.name}} - {{job.job}}</li>
+        <li class="placeholder" style="list-style: none;"></li>
+      </ul>
     </div>
+  </div>
+
+<!-- <button ng-click="dayRef.remove();">Press to delete</button> -->
 
 
 

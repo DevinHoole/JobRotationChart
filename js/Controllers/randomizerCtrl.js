@@ -1,16 +1,24 @@
 var app = angular.module('jobRotation');
 
 // The functions are used to save the data to firebase, and then to randomly combine the Names with the Jobs
-app.controller('randomizerCtrl', function($scope, $firebaseArray){
+app.controller('randomizerCtrl', function($scope, $firebaseArray, $firebaseObject){
   $scope.randomize = false;
 
-  $scope.week = [{name: "Sunday", assignments: []}, {name: "Monday", assignments: []}, {name: "Tuesday", assignments: []}, {name: "Wednesday", assignments: []}]
 
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var namesRef = new Firebase("https://drh-job-rotation.firebaseio.com/names");
   $scope.names = $firebaseArray(namesRef);
-
+  $scope.week = {};
   var jobsRef = new Firebase("https://drh-job-rotation.firebaseio.com/jobs");
   $scope.jobs = $firebaseArray(jobsRef);
+
+
+  for(var i = 0; i < days.length; i++){
+    var dayRef = new Firebase("https://drh-job-rotation.firebaseio.com/week/" + days[i]);
+    $scope.week[days[i]] = $firebaseArray(dayRef);
+  };
+
+  dayRef.remove();
 
   function userJobs (id) {
     return $firebaseArray(new Firebase("https://drh-job-rotation.firebaseio.com/names/" + id + "/jobs"));
@@ -41,7 +49,7 @@ app.controller('randomizerCtrl', function($scope, $firebaseArray){
 
   $scope.randomizer = function(arr1, arr2){
     var trackArr = arr1.slice(); //makes a shallow copy
-    console.log(trackArr, arr2);
+    // console.log(trackArr, arr2);
     for(var i = 0; i < arr2.length; i++){
       if (!trackArr.length) {
         trackArr = arr1.slice();
@@ -75,5 +83,31 @@ app.controller('randomizerCtrl', function($scope, $firebaseArray){
   // $scope.names = [];
   // $scope.jobs = [];
   // $scope.oldJobs = [];
+
+
+  $scope.hideMe = function() {
+    return $scope.list4.length > 0;
+  };
+
+  // $scope.assignDay = function(crapUno, crapDos, day){
+  //   console.log('dropped', day);
+  //   $scope.onDragStop = function(crap1, crap2, job, name){
+  //     console.log('stopped and dropped');
+  //     if($scope.week[day]){
+  //       $scope.week[day] = [];
+  //     } else {
+  //       $scope.week[day].push({name: name, job: job});
+  //     }
+  //   }
+  // };
+
+  $scope.onDragStop = function(crap1, crap2, job, name){
+    console.log('stopped', job, name);
+    $scope.assignDay = function(crapUno, crapDos, day){
+      console.log('drop and stp')
+      console.log($scope.week[day])
+      $scope.week[day].$add({name: name, job: job.name});
+    };
+  };
 
 });
