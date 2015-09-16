@@ -18,7 +18,9 @@ html, body {
   margin: auto; auto;
   box-sizing: border-box;
 }
-
+.h9{
+  text-align:left;
+}
 
 /*The parent container for the row of boxes*/
 #row {
@@ -37,6 +39,10 @@ html, body {
   bottom: 0;
   height: 145px;
   width: 145px;
+}
+#imgIcon{
+  width: 15px;
+  height: auto;
 }
 /*This centers and bolds the name of the days in the boxed DIV*/
 h4 {

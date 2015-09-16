@@ -11,14 +11,37 @@ app.controller('randomizerCtrl', function($scope, $firebaseArray, $firebaseObjec
   $scope.week = {};
   var jobsRef = new Firebase("https://drh-job-rotation.firebaseio.com/jobs");
   $scope.jobs = $firebaseArray(jobsRef);
-
+console.log("jobs: ", $scope.jobs);
 
   for(var i = 0; i < days.length; i++){
     var dayRef = new Firebase("https://drh-job-rotation.firebaseio.com/week/" + days[i]);
     $scope.week[days[i]] = $firebaseArray(dayRef);
+    console.log("week: ", $scope.week);
   };
 
-  dayRef.remove();
+  $scope.remove = function(day, job, index) {
+    console.log("day: ", day);
+    console.log("job: ", job);
+    var url = "https://drh-job-rotation.firebaseio.com/week/" + day + "/" + job.$id;
+    console.log("url: ", url);
+    var ref = new Firebase(url);
+    ref.remove(function(res) {
+      console.log(res);
+    });
+  };
+
+  // function($scope, $firebaseArray) {
+  //   var list = $firebaseArray(new Firebase(URL));
+  //
+  //   // add an item
+  //   list.$add({ foo: "bar" }).then(...);
+  //
+  //   // remove an item
+  //   list.$remove(2).then(...);
+  //
+  //   // make the list available in the DOM
+  //   $scope.list = list;
+  // }
 
   function userJobs (id) {
     return $firebaseArray(new Firebase("https://drh-job-rotation.firebaseio.com/names/" + id + "/jobs"));
