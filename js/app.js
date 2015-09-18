@@ -19,7 +19,7 @@ $routeProvider
     //     controller: "jobDetailsCtrl"
     // })
     .when('/jobDetails', {
-        templateUrl: './views/threads.html',
+        templateUrl: 'Views/threads.html',
         controller: 'threadsCtrl',
         resolve: {
           threadsRef: function(threadService) {
@@ -28,7 +28,7 @@ $routeProvider
         }
     })
     .when('/threads/:threadId', {
-        templateUrl: './views/thread.html',
+        templateUrl: 'Views/thread.html',
         controller: 'threadCtrl',
         resolve: {
           threadRef: function (threadService, $route) {
